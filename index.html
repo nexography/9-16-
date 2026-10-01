@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nexography.com</title>
+  <meta name="description"
+    content="NEXOGRAPHY - Premium 9:16 vertical video portfolio for Instagram Reels, TikToks, YouTube Shorts, and Meta video ads. High-impact motion graphics and cinematic edits." />
+
+  <!-- Favicon / Title Icon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/ICON.svg" />
+  <link rel="shortcut icon" href="assets/images/ICON.svg" type="image/svg+xml" />
+
+  <!-- Remix Icons for Clean Monochrome Vector Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+  <!-- Background Glowing Backdrop & Interactive Plexus Canvas -->
+  <canvas id="plexusCanvas"></canvas>
+  <div class="bg-glow">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+  </div>
+  <div class="grid-overlay"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <img src="assets/images/LOGO.png" alt="NEXOGRAPHY" class="brand-logo-img" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#showcase" class="nav-link active">Showcase</a></li>
+        <li><a href="#services" class="nav-link">Packages</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://wa.me/94751724220" target="_blank" class="btn btn-whatsapp">
+          <i class="ri-whatsapp-line"></i> Book Project
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle Mobile Menu">
+          <i class="ri-menu-line"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content">
+
+        <h1 class="hero-title">
+          High Impact <span>Reels & Stories</span> Created to Convert.
+        </h1>
+
+        <p class="hero-subtitle">
+          Engineered for every social screen. We transform raw footage into high-converting Instagram & Facebook Reels,
+          TikToks, LinkedIn content, and Meta Ads — crafted in stunning 9:16 format for maximum impact.
+        </p>
+
+        <div class="hero-ctas">
+          <button id="heroWatchBtn" class="btn btn-primary">
+            <i class="ri-play-fill"></i> Watch Featured Reel
+          </button>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">4K</span>
+            <span class="stat-label">Ultra-HD Quality</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Creative Ideas/span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Brand Focused</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero 9:16 Interactive Phone Mockup -->
+      <div class="hero-visual">
+        <div class="phone-mockup-wrapper">
+          <div class="phone-mockup-3d">
+            <div class="phone-notch">
+              <div class="phone-camera"></div>
+            </div>
+            <video src="assets/videos/0112.mp4" class="phone-screen" autoplay loop muted playsinline></video>
+            <div class="phone-overlay-ui">
+              <div class="phone-header-ui">
+                <span><i class="ri-instagram-line"></i> REEL</span>
+                <span><i class="ri-wifi-line"></i> 5G</span>
+              </div>
+              <div class="phone-footer-ui">
+                <div class="user-tag-row">
+                  <div class="avatar-small">
+                    <img src="assets/images/ICON.svg" alt="NEXOGRAPHY Logo"
+                      style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;" />
+                  </div>
+                  <span style="font-weight:700; font-size:0.85rem;">@nexography</span>
+                </div>
+                <div class="reel-caption-mini">
+                  High-contrast cyber fashion promo. 60 FPS motion graphics & sound design.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Badge -->
+          <div class="phone-badge-floating">
+            <div class="badge-icon"><i class="ri-fire-line"></i></div>
+            <div>
+              <div class="badge-text-title">Client Ready</div>
+              <div class="badge-text-sub">Instant 4K Export</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase / Reels Portfolio Grid -->
+  <section id="showcase" class="portfolio-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Client Showroom</span>
+        <h2 class="section-title">Selected 9:16 Reels & Stories</h2>
+        <p style="color: var(--text-muted);">Click any reel to play in full smartphone view with sound & project
+          details.</p>
+      </div>
+
+      <!-- Category Filter Bar -->
+      <div class="filter-bar reveal reveal-delay-1">
+        <button class="filter-btn active" data-filter="all">All Reels</button>
+        <button class="filter-btn" data-filter="fashion">Fashion & Apparel</button>
+        <button class="filter-btn" data-filter="tech">Brand Promotions</button>
+        <button class="filter-btn" data-filter="luxury">Job Vacancies</button>
+        <button class="filter-btn" data-filter="motion">Corporate & Business</button>
+        <button class="filter-btn" data-filter="fitness">Event & Promo</button>
+      </div>
+
+      <!-- Dynamic Grid for 9:16 Cards -->
+      <div id="reelsGrid" class="reels-grid">
+        <!-- Rendered dynamically by js/script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Services & Pricing Packages for Clients -->
+  <section id="services" class="services-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Client Packages</span>
+        <h2 class="section-title">Flat-Rate Editing & Design Plans</h2>
+        <p style="color: var(--text-muted);">Simple, transparent pricing tailored for social growth.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Package 1: Reel Edit -->
+        <div class="pricing-card featured reveal reveal-pop">
+          <span class="popular-badge">Most Popular</span>
+          <h3 class="price-title">Social Reel Edit</h3>
+          <div>
+            <span class="price-amount" style="font-size: 2.5rem;">Rs. 2,000</span>
+            <span class="price-period"> / Reel</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.92rem;">
+            Professional short-form video, built for social media.
+          </p>
+          <ul class="features-list">
+            <li class="feature-item"><i class="ri-check-line"></i> 10 / 15 / 30 Sec — Your Choice</li>
+            <li class="feature-item"><i class="ri-check-line"></i> Captions & Text Animation</li>
+            <li class="feature-item"><i class="ri-check-line"></i> Music, SFX & Beat Sync</li>
+            <li class="feature-item"><i class="ri-check-line"></i> HD / 4K Export</li>
+            <li class="feature-item"><i class="ri-check-line"></i> Instagram, Facebook, TikTok & LinkedIn Ready</li>
+          </ul>
+          <a href="https://wa.me/94751724220?text=Hi%20NEXOGRAPHY!%20I%20want%20to%20order%20a%20Social%20Reel%20Edit%20(Rs.%202%2C000)"
+            target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+            <i class="ri-whatsapp-line"></i> Order Your Reel <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+
+        <!-- Package 2: Post Design -->
+        <div class="pricing-card reveal reveal-pop reveal-delay-1">
+          <h3 class="price-title">Social Media Post Design</h3>
+          <div>
+            <span class="price-amount" style="font-size: 2.5rem;">Rs. 1,000</span>
+            <span class="price-period"> / Post</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.92rem;">
+            Professional designs made to match your brand and stand out on social media.
+          </p>
+          <ul class="features-list">
+            <li class="feature-item"><i class="ri-check-line"></i> Scroll-Stopping Designs</li>
+            <li class="feature-item"><i class="ri-check-line"></i> Brand-Focused Layout</li>
+            <li class="feature-item"><i class="ri-check-line"></i> High-Quality Export</li>
+            <li class="feature-item"><i class="ri-check-line"></i> Multi-Platform Ready</li>
+          </ul>
+          <button id="viewPostSamplesBtn" class="btn btn-secondary" style="width: 100%;">
+            <i class="ri-gallery-line"></i> View Post Samples (21)
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <a href="#" class="brand-logo">
+          <img src="assets/images/LOGO.png" alt="NEXOGRAPHY" class="brand-logo-img" style="height: 32px;" />
+        </a>
+        <div class="footer-copy">
+          &copy; 2026 NEXOGRAPHY. All Rights Reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive 9:16 Smartphone Video Modal Player -->
+  <div id="reelModal" class="reel-modal">
+    <div id="modalBackdrop" class="modal-backdrop"></div>
+    <div class="modal-container">
+
+      <!-- Close Button -->
+      <button id="modalCloseBtn" class="modal-close-btn" aria-label="Close Modal">
+        <i class="ri-close-line"></i>
+      </button>
+
+      <!-- Smartphone Frame -->
+      <div class="modal-phone-frame">
+        <div class="phone-notch">
+          <div class="phone-camera"></div>
+        </div>
+
+        <img id="modalPoster" src="" alt="Poster" class="modal-phone-poster" />
+        <video id="modalVideo" playsinline loop crossorigin="anonymous"></video>
+
+        <!-- Story Controls Overlay -->
+        <div class="story-overlay-controls">
+          <div>
+            <div class="story-progress-bar-wrap">
+              <div id="progressBarFill" class="story-progress-bar-fill"></div>
+            </div>
+
+            <div class="story-top-row">
+              <div class="story-author-info">
+                <div class="avatar-small">
+                  <img src="assets/images/ICON.svg" alt="NEXOGRAPHY Logo"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;" />
+                </div>
+                <div>
+                  <div class="story-author-name">NEXOGRAPHY</div>
+                  <div class="story-author-sub">Vertical Reel Showcase</div>
+                </div>
+              </div>
+              <div class="story-top-actions">
+                <button id="soundToggleBtn" class="story-icon-btn" title="Toggle Audio">
+                  <i class="ri-volume-mute-line"></i>
+                </button>
+                <button id="playPauseBtn" class="story-icon-btn" title="Play/Pause">
+                  <i class="ri-pause-line"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="story-bottom-info">
+            <div id="modalStoryCaption" class="story-caption-text">
+              <!-- Dynamically filled -->
+            </div>
+            <button id="modalInquireBtn" class="story-inquire-btn">
+              <i class="ri-chat-3-line"></i> Inquire About This Style
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Project Specs Sidebar -->
+      <div class="modal-sidebar">
+        <h2 id="modalTitle" class="modal-project-title">Reel Title</h2>
+        <p id="modalDesc" class="modal-project-desc">Project details and motion design breakdown will appear here.</p>
+
+        <div class="modal-specs-list">
+          <div class="spec-box">
+            <span class="spec-label">Client / Brand</span>
+            <span id="modalClient" class="spec-value">-</span>
+          </div>
+          <div class="spec-box">
+            <span class="spec-label">Est. Views</span>
+            <span id="modalViews" class="spec-value">-</span>
+          </div>
+          <div class="spec-box">
+            <span class="spec-label">Quality</span>
+            <span id="modalFps" class="spec-value">-</span>
+          </div>
+          <div class="spec-box">
+            <span class="spec-label">Aspect Ratio</span>
+            <span id="modalResolution" class="spec-value">1080 x 1920 (9:16)</span>
+          </div>
+          <div class="spec-box" style="grid-column: span 2;">
+            <span class="spec-label">Software & Tools</span>
+            <span id="modalSoftware" class="spec-value">-</span>
+          </div>
+        </div>
+
+        <div class="modal-nav-buttons">
+          <button id="prevReelBtn" class="btn btn-secondary">
+            <i class="ri-arrow-left-s-line"></i> Previous Reel
+          </button>
+          <button id="nextReelBtn" class="btn btn-secondary">
+            Next Reel <i class="ri-arrow-right-s-line"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Interactive Graphic Post Samples Modal Gallery Slider -->
+  <div id="postsModal" class="posts-modal">
+    <div id="postsModalBackdrop" class="modal-backdrop"></div>
+    <div class="posts-modal-container">
+      <button id="postsModalCloseBtn" class="modal-close-btn" aria-label="Close Modal">
+        <i class="ri-close-line"></i>
+      </button>
+
+      <div class="posts-modal-header">
+        <span class="section-subtitle">Graphic Design Samples</span>
+        <h2 class="posts-modal-title">Social Media Post Gallery</h2>
+        <div class="post-slide-counter">
+          <span id="currentPostNum">1</span> / <span id="totalPostsNum">21</span>
+        </div>
+      </div>
+
+      <!-- Main Slider Stage -->
+      <div class="posts-slider-stage">
+        <button id="postsSliderPrevBtn" class="posts-slider-nav prev" aria-label="Previous Post">
+          <i class="ri-arrow-left-s-line"></i>
+        </button>
+
+        <div id="postsSlideViewport" class="posts-slide-viewport">
+          <div id="postsSlideTrack" class="posts-slide-track">
+            <!-- Dynamically rendered 21 slide items -->
+          </div>
+        </div>
+
+        <button id="postsSliderNextBtn" class="posts-slider-nav next" aria-label="Next Post">
+          <i class="ri-arrow-right-s-line"></i>
+        </button>
+      </div>
+
+      <!-- Active Post Details & Order CTA -->
+      <div class="posts-modal-footer">
+        <div class="active-post-info">
+          <h3 id="activePostTitle" class="active-post-title">Post Title</h3>
+          <span id="activePostCategory" class="active-post-category">Category</span>
+        </div>
+        <a id="activePostWhatsappBtn" href="https://wa.me/94751724220" target="_blank" class="btn btn-whatsapp" style="padding: 10px 20px; font-size: 0.9rem;">
+          <i class="ri-whatsapp-line"></i> Order This Post Design (Rs. 1,000)
+        </a>
+      </div>
+
+      <!-- Bottom Thumbnail Carousel Strip -->
+      <div id="postsThumbStrip" class="posts-thumb-strip">
+        <!-- Dynamically rendered mini thumbnails -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>
